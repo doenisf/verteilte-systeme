@@ -11,7 +11,12 @@ public class A3 implements Runnable{
         } catch (InterruptedException e) {}
         a3.stop();
     }
-
+    /*
+    "Für jeden neu erzeugten Thread ist auch ein neuer Name zur Unterscheidung zu wählen"
+    Wenn ich das richtig verstehe soll es hier eine Möglichkeit geben mehrere Threads zu starten und
+    denen dann eigene Namen zu geben. Den Namen hätte ich über die Console gesetzt via
+    String input = System.console().readLine(); oder ähnlich. Wie genau er den neuen Thread starten will weiß ich noch nicht.
+     */
     public void start(String name) {
         Thread t = new Thread(this);
         t.setName(name);

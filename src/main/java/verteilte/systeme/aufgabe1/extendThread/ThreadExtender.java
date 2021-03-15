@@ -25,4 +25,9 @@ public class ThreadExtender extends Thread{
         System.out.println(name);
         notify();
     }
+
+    /*
+    "in einer Endlosschleife unterschiedlich schnell ausgibt"
+    Da kannst du auch schauen ob es einen anderen Weg gibt dies zu realisieren.
+     */
 }
