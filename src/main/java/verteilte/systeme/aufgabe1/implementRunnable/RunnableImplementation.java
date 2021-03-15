@@ -2,10 +2,16 @@ package verteilte.systeme.aufgabe1.implementRunnable;
 
 public class RunnableImplementation implements Runnable{
 
+    long timeout;
+
+    RunnableImplementation(long timeout) {
+        this.timeout = timeout;
+    }
+
     public static void main(String[] args) {
-        Thread t1 = new Thread(new RunnableImplementation());
+        Thread t1 = new Thread(new RunnableImplementation(500));
         t1.setName("hip");
-        Thread t2 = new Thread(new RunnableImplementation());
+        Thread t2 = new Thread(new RunnableImplementation(1000));
         t2.setName("hop");
         t1.start();
         t2.start();
@@ -24,14 +30,14 @@ public class RunnableImplementation implements Runnable{
      */
     @Override
     public void run() {
-        for(int i = 0; i <10; i++) {
+        while(true) {
             writeName(Thread.currentThread().getName());
         }
     }
 
     private synchronized void writeName(String name) {
         try {
-            wait(100);
+            wait(timeout);
         } catch (InterruptedException e) {};
         System.out.println(name);
         notify();
