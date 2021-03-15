@@ -28,6 +28,7 @@ public class ThreadExtender extends Thread{
 
     /*
     "in einer Endlosschleife unterschiedlich schnell ausgibt"
-    Da kannst du auch schauen ob es einen anderen Weg gibt dies zu realisieren.
+    Da kannst du auch schauen ob es einen anderen Weg gibt dies zu realisieren. Im Moment beruht deine Ausgabe auf
+    dem Scheduler. Unterschiedlich schnelle Ausgaben sind nicht implementiert.
      */
 }
