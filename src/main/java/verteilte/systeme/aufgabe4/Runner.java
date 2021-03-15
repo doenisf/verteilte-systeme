@@ -3,6 +3,11 @@ package verteilte.systeme.aufgabe4;
 public class Runner implements Runnable {
     private LogFile logFile;
 
+    /**
+     * Creates a new instance of {@link Runner}.
+     *
+     * @param logFile the thread should write its log messages to.
+     */
     public Runner(LogFile logFile) {
         this.logFile = logFile;
     }

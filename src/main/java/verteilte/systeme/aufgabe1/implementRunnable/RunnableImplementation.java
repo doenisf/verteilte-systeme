@@ -1,13 +1,25 @@
 package verteilte.systeme.aufgabe1.implementRunnable;
 
 public class RunnableImplementation implements Runnable{
+    /**
+     * Local variable to set the wait time of the thread.
+     */
+    private long timeout;
 
-    long timeout;
-
+    /**
+     * Creates a new instance of {@link RunnableImplementation} and sets the wait time to the given time.
+     *
+     * @param timeout wait time.
+     */
     RunnableImplementation(long timeout) {
         this.timeout = timeout;
     }
 
+    /**
+     * Main methode of the programm.
+     *
+     * @param args command line arguments.
+     */
     public static void main(String[] args) {
         Thread t1 = new Thread(new RunnableImplementation(500));
         t1.setName("hip");
@@ -35,6 +47,11 @@ public class RunnableImplementation implements Runnable{
         }
     }
 
+    /**
+     * Writes the given {@link String} to the system out-stream.
+     *
+     * @param name to be printed.
+     */
     private synchronized void writeName(String name) {
         try {
             wait(timeout);
