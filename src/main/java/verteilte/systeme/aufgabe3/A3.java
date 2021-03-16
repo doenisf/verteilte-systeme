@@ -12,11 +12,16 @@ public class A3 implements Runnable{
      * @param args command line arguments.
      */
     public static void main(String[] args) {
+        // instantiates a new runnable and names it
         A3 a3 = new A3();
         a3.start("Thread-a3");
+
+        // sleep to give the running thread time to do stuff
         try {
             Thread.currentThread().sleep(6500);
         } catch (InterruptedException e) {}
+
+        // call the stop methode on the runnable to stop the thread
         a3.stop();
     }
 
@@ -26,8 +31,13 @@ public class A3 implements Runnable{
      * @param name of the thread.
      */
     public void start(String name) {
+        // instantiate a new thread and give the constructor the calling runnable
         Thread t = new Thread(this);
+
+        // set the name to the given name
         t.setName(name);
+
+        // start the thread
         t.start();
     }
 
