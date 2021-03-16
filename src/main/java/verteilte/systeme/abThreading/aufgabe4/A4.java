@@ -1,4 +1,4 @@
-package verteilte.systeme.aufgabe4;
+package verteilte.systeme.abThreading.aufgabe4;
 
 public class A4 {
 

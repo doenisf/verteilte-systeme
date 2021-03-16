@@ -1,4 +1,4 @@
-package verteilte.systeme.aufgabe5;
+package verteilte.systeme.abThreading.aufgabe5;
 
 public class Konto {
     private double kontostand = 0;

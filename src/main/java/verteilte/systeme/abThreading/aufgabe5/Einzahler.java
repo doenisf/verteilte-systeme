@@ -1,4 +1,4 @@
-package verteilte.systeme.aufgabe5;
+package verteilte.systeme.abThreading.aufgabe5;
 
 public class Einzahler implements Runnable{
     Konto konto;

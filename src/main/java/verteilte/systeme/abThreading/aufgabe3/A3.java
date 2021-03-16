@@ -1,4 +1,4 @@
-package verteilte.systeme.aufgabe3;
+package verteilte.systeme.abThreading.aufgabe3;
 
 public class A3 implements Runnable{
     /**

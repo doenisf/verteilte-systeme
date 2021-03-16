@@ -1,17 +1,17 @@
-package verteilte.systeme.aufgabe1.implementRunnable;
+package verteilte.systeme.abThreading.aufgabe1.extendThread;
 
-public class RunnableImplementation implements Runnable{
+public class ThreadExtender extends Thread {
     /**
      * Local variable to set the wait time of the thread.
      */
     private long timeout;
 
     /**
-     * Creates a new instance of {@link RunnableImplementation} and sets the wait time to the given time.
+     * Creates a new instance of {@link ThreadExtender} and sets the wait time to the given time.
      *
      * @param timeout wait time.
      */
-    RunnableImplementation(long timeout) {
+    ThreadExtender(long timeout) {
         this.timeout = timeout;
     }
 
@@ -21,9 +21,9 @@ public class RunnableImplementation implements Runnable{
      * @param args command line arguments.
      */
     public static void main(String[] args) {
-        Thread t1 = new Thread(new RunnableImplementation(500));
+        ThreadExtender t1 = new ThreadExtender(500);
         t1.setName("hip");
-        Thread t2 = new Thread(new RunnableImplementation(1000));
+        ThreadExtender t2 = new ThreadExtender(1000);
         t2.setName("hop");
         t1.start();
         t2.start();
@@ -42,8 +42,8 @@ public class RunnableImplementation implements Runnable{
      */
     @Override
     public void run() {
-        while(true) {
-            writeName(Thread.currentThread().getName());
+        while (true) {
+            writeName(getName());
         }
     }
 
@@ -52,10 +52,12 @@ public class RunnableImplementation implements Runnable{
      *
      * @param name to be printed.
      */
-    private synchronized void writeName(String name) {
+    public synchronized void writeName(String name) {
         try {
             wait(timeout);
-        } catch (InterruptedException e) {};
+        } catch (InterruptedException e) {
+
+        }
         System.out.println(name);
         notify();
     }

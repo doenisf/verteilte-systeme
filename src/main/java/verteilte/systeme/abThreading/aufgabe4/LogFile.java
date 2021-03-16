@@ -1,4 +1,4 @@
-package verteilte.systeme.aufgabe4;
+package verteilte.systeme.abThreading.aufgabe4;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
