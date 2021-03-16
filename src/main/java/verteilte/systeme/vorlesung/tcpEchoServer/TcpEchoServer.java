@@ -14,8 +14,9 @@ public class TcpEchoServer {
         try {
             serverSocket = new ServerSocket(50000);
             Socket clientSocket = null;
-            System.out.println("auf Verbindungsanfragen warten.....");
+            System.out.println("auf Verbindungsanfragen von Client warten.....");
             clientSocket = serverSocket.accept();
+            System.out.println("Verbindung erfolgreich aufgebaut.....");
             System.out.println("Auf Input des Clients warten.....");
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
